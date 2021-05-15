@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Email Sender</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- favicon link -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAABCQkIAAAAAAICAgAD///8Az8/PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERERERESIiIiIiIiIiBERERERERAJAQzMzMzNAQkMEMzMzNANCQzBDRENAM0JDMwQABAMzQkMzQDMwQzNCQzQDMzMEM0JDQDMzMzBDQkQDMzMzMwRCQDMzMzMzMEIEREREREREAhERERERERERERERERERERH//wAA//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+  </head>
+  <body>
+
+    <style media="screen">
+    body{
+      background-image: url("https://mail.pskovedu.ru/skins/larry/images/pskovedu-mail-bg6.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .footer{
+      margin-top: 80px;
+      text-align: center;
+    }
+    body{
+      background-color: #bdc7c9;
+    }
+    .loader {
+  display: none;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #eeeeee;
+}
+
+.loading {
+  border: 4px solid #ccc;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-top-color: #1ecd97;
+  border-left-color: #1ecd97;
+  animation: spin 1s infinite ease-in;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    </style>
+
+    <div class="container">
+      <br>
+        <h1 class="text-center">
+          📧  Send Email With Attachment 📧
+        </h1>
+        <br>
+        <form autocomplete="off" action="/sendemail" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+              <input class="form-control" type="email" name="to" required placeholder="To:">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" name="subject" placeholder="Subject:" required id="">
+          </div>
+          <div class="form-group">
+              <textarea required class="form-control" name="body" id="" cols="30" rows="10" placeholder="Body:"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="attachment"><b>Attachment:<b></label>
+              <input class="form-control" type="file" required class="form-control" name="excel" id="">
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-block btn-success" onclick="spinner()">
+                  Send Message
+              </button>
+              <div class="loader">
+                <div class="loading">
+                  </div>
+              </div>
+          </div>
+      </form>
+
+      <footer class="footer">
+        <strong>Made by Akanksha Ramgirwar !</strong>
+      </footer>
+
+      <script type="text/javascript">
+    function spinner() {
+        document.getElementsByClassName("loader")[0].style.display = "block";
+    }
+</script>
+
+</body>
+
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>
